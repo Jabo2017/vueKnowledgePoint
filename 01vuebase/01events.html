@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01事件</title> 
+</head>
+<body>
+	<div id="app">
+		<button @dblclick="mydbClick">双击事件</button>
+	</div>
+	
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el:'#app',
+			data:{
+
+			},
+			methods:{
+				mydbClick(){
+					alert("Hi")
+				}
+			}
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03键盘事件</title> 
+</head>
+<body>
+	<div id="app">
+		<input type="text" placeholder="输入查看控制台" @keyup="inputData">
+		<input type="text" placeholder="输入查看控制台按回车" @keyup.enter="inputData2">
+	</div>
+	
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el:'#app',
+			data:{
+
+			},
+			methods:{
+				inputData(event){
+					console.log(event.key)
+				},
+				inputData2(event){
+					console.log(event.key)
+				}
+			}
+		})
+	</script>
+</body>
+</html>

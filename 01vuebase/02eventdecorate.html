@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02事件修饰符</title>
+
+	<style type="text/css">
+		.mousearea{
+			width: 300px;
+			height: 280px;
+			border:1px solid #ddd;
+			text-align: center;
+		}
+
+		.mousestop{
+			display: inline-block;
+			padding: 30px 60px;
+			cursor: pointer;
+			background-color: #ddd;
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="app">
+		
+		<div class="mousearea" @mousemove="showoffset">
+			{{x}} -- {{y}}
+			<span class="mousestop" @mousemove.stop >暂停</span>
+			
+		</div>
+
+		<button @click.once="say">只触发一次</button>
+	</div>
+	
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el:'#app',
+			data:{
+				x:0,
+				y:0,
+			},
+			methods:{
+				showoffset(event){
+					this.x = event.offsetX;
+					this.y = event.offsetY;
+				},
+				say(){
+					alert("Hi");
+				}
+			}
+		})
+	</script>
+</body>
+</html>
