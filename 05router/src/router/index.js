@@ -4,6 +4,7 @@ import Index from '@/components/Index'
 import About from '@/components/About'
 import News from '@/components/News'
 import GoBack from '@/components/GoBack'
+import Replace from '@/components/Replace'
 import Error from '@/components/404'
 
 Vue.use(Router)
@@ -26,6 +27,10 @@ export default new Router({
     path: '/goback',
     name: 'GoBack',
     component:GoBack
+  },{
+    path: '/replace',
+    name: 'Replace',
+    component:Replace
   },{
     path: '/tag',
     name: 'Tag',

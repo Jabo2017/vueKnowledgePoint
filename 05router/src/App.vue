@@ -6,6 +6,7 @@
         <router-link tag="div" class="nav-li" to="/tag">tag和redirect重定向</router-link>
         <router-link class="nav-li" :to="{name:'News'}">name方法跳转</router-link>
         <router-link class="nav-li" :to="{name:'GoBack'}">返回上一页</router-link>
+        <router-link class="nav-li" :to="{name:'Replace'}">指定跳转地址</router-link>
     </nav>
     <router-view/>
   </div>
