@@ -1,12 +1,14 @@
 # vueKnowledgePoint
 
-
-## 01vuebase ： vue 基础知识点
-
-
-## 02components ： vue 组件
+## vue-router ：路由
 
 
-## 03byvalue ： vue 传值
+### 添加sass 插件
+>[参考](https://www.cnblogs.com/crazycode2/p/6535105.html)
 
+``` bash
+1、cnpm install node-sass --save-dev
+2、cnpm install sass-loader --save-dev
+3、修改build/webpack.base.conf.js
+```
 
