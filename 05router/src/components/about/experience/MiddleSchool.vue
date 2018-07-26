@@ -1,6 +1,6 @@
 <template>
-	<div class="about">
-		关于我们
+	<div class="middleSchool">
+		寿宁二中
 	</div>
 </template>
 
@@ -8,6 +8,7 @@
 	
 </script>
 
-<style scoped>
+
+<style>
 	
 </style>
