@@ -23,7 +23,8 @@ export default new Router({
     name: 'Index',
     component: Index
   },{
-    path: '/news',
+    //path: '/news/:id?/:name?',  //在参数后面加个? => 没有参数时不会报错; 多个参数写法
+    path: '/news/:id?',  //在参数后面加个? => 没有参数时不会报错
     name: 'News',
     component: News
   },{
