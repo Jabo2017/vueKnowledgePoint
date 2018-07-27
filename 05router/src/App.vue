@@ -15,8 +15,12 @@
         <router-link class="nav-li" :to="{name:'Push'}">指定跳转地址push</router-link>
         <router-link class="nav-li" to="/about/resume" append>路由追加【不建议】</router-link>
         <router-link class="nav-li" :to="{path:'/about/aboutus'}" >路径方式,不如name</router-link>
+        <router-link class="nav-li" :to="{name:'ScrollBehavior'}" >滚动行为</router-link>
     </nav>
-    <router-view/>
+    <router-view class="box" />
+
+    <router-view class="box" name="NewsView"/>
+    <router-view class="box" name="PushView"/>
   </div>
 </template>
 
@@ -31,6 +35,13 @@ export default {
     margin:0;
     padding: 0;
   }
+
+  .box{
+    margin-bottom:20px;
+    padding:10px;
+    background:#efefef;
+  }
+
   .router-link-active{
     background-color: darken(lightgreen,10%) !important;
   }

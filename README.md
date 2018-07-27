@@ -6,6 +6,8 @@
 ### 添加sass 插件
 >[参考](https://www.cnblogs.com/crazycode2/p/6535105.html)
 
+### [路由参考](https://router.vuejs.org/zh/guide/advanced/navigation-guards.html#%E5%85%A8%E5%B1%80%E5%AE%88%E5%8D%AB)
+
 ``` bash
 1、cnpm install node-sass --save-dev
 2、cnpm install sass-loader --save-dev
@@ -28,4 +30,54 @@ router-link 里面指定具体参数，key需要routes里面指定：
 
 ```
 
+### 守卫
 
+> 全局守卫
+``` javascript
+	router.beforeEach((to,from,next) =>{
+		console.log(to)
+
+		if(to.path == "/push" || to.path == "/replace"){
+			console.log("全局守卫：进入指定跳转路由");
+		} else{
+			console.log("全局守卫：进入其他路由");
+		}
+		next();
+	})
+
+```
+
+> 后置钩子
+``` javascript
+	router.afterEach((to,from) =>{
+		console.log("后置钩子：" + from.path)
+	})
+
+```
+
+> 路由独享守卫
+``` javascript
+	//在routes中
+	beforeEnter:(to, from, next) => {   //路由独享守卫
+      console.log("路由独享守卫进入："+ to.path);
+      next();
+    }
+
+```
+
+### 路由复用
+``` javascript
+routes 里面
+  {
+    path: '/',
+    name: 'Index',
+    components:{
+      default: Index,
+      'NewsView':News,
+      'PushView':Push
+    }
+  }
+
+```
+
+### [扩展是否带花括号](https://www.cnblogs.com/Abner5/p/7256043.html)

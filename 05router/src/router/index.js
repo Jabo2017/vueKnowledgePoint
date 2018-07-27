@@ -12,21 +12,39 @@ import News from '@/components/News'
 import GoBack from '@/components/GoBack'
 import Replace from '@/components/Replace'
 import Push from '@/components/Push'
+import ScrollBehavior from '@/components/ScrollBehavior'
 import Error from '@/components/404'
 
 Vue.use(Router)
 
 export default new Router({
   mode: "history",
+  scrollBehavior(to,from,savePosition){  //滚动行为
+      //return {x:0, y:100}
+      //return { selector:'.location'}
+      if(savePosition){
+        return savePosition
+      } else{
+        return { x:0, y:0 }
+      }
+  },
   routes: [{
     path: '/',
     name: 'Index',
-    component: Index
+    components:{
+      default: Index,
+      'NewsView':News,
+      'PushView':Push
+    }
   },{
     //path: '/news/:id?/:name?',  //在参数后面加个? => 没有参数时不会报错; 多个参数写法
     path: '/news/:id?',  //在参数后面加个? => 没有参数时不会报错
     name: 'News',
-    component: News
+    component: News,
+    beforeEnter:(to, from, next) => {   //路由独享守卫
+      console.log("路由独享守卫进入："+ to.path);
+      next();
+    }
   },{
     path: '/about',
     name: 'About',
@@ -55,6 +73,10 @@ export default new Router({
     path: '/push',
     name: 'Push',
     component:Push
+  },{
+    path: '/sb',
+    name: 'ScrollBehavior',
+    component:ScrollBehavior
   },{
     path: '/tag',
     name: 'Tag',
