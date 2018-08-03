@@ -13,6 +13,8 @@
 ## 2、 创建store文件
 
 
-## 3、main.js中引入的vuex文件
+## 3、main.js中引入的vuex文件 【只能命名store】
 
+
+## [参考](https://vuex.vuejs.org/zh/guide/state.html)
 

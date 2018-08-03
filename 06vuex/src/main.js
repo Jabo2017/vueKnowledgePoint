@@ -6,13 +6,13 @@ import router from './router'
 
 Vue.config.productionTip = false
 
-import StoreConfig from './vuex/store'
+import store from './vuex/store'   //只能是store
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  StoreConfig,
+  store,
   components: { App },
   template: '<App/>'
 })
